@@ -49,6 +49,7 @@ Thumbs.db
 node_modules
 typings/**
 *.js
+!webpack.config.js
 *.js.map
 dist
 
