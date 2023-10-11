@@ -1,0 +1,18 @@
+<div>
+    <form (submit)="search(term)">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="search">search:</label>
+                <input type="text" class="form-control" [(ngModel)]="term" id="search" name="search" />
+                <small class="form-text text-muted"
+                    >Enter Order ID, Shipbin ID, Account ID.
+                </small>
+            </div>
+        </div>
+        <button type="button" class="btn btn-sm btn-primary" (click)="search(term)" [disabled]="!term || searching">
+            <span class="fa fa-search"></span>&nbsp;search
+        </button>
+    </form>
+   
+</div>
+

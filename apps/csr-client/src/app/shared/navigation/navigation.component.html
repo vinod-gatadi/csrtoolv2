@@ -1,0 +1,33 @@
+<ul ngbNav #nav="ngbNav" class="nav-tabs" [(activeId)]="activeTab">
+    <li [ngbNavItem]="tab.display" *ngFor="let tab of tabs">
+        <a ngbNavLink [routerLink]="[tab.display]" class="text-uppercase">
+            <span>{{ tab.display }}</span>
+
+            <div style="width: 25px;" class="ml-2 d-inline-block"
+                ><span  *ngIf="tab.notifications$ | async as count" class="badge badge-pill badge-secondary">{{
+                    count > 99 ? '99+' : count
+                }}</span>
+                <span *ngIf="tab.loading$ | async" class="fa fa-refresh fa-spin" aria-hidden="true"></span
+            ></div>
+        </a>
+
+        <ng-template ngbNavContent>
+        </ng-template>
+    </li>
+</ul>
+
+<!-- <div class="px-0">
+    <nav class="nav nav-pills nav-justified text-uppercase">
+        <a
+            *ngFor="let tab of tabs"
+            class="nav-link  border border-primary rounded-0"
+            [ngClass]="{ active: tab === activeTab }"
+            [routerLink]="[tab]"
+            >{{ tab }}</a
+        >
+
+        <div class="col text-right">
+            <tools-workspace-actions [actions]="actions"></tools-workspace-actions>
+        </div>
+    </nav>
+</div> -->

@@ -27,7 +27,8 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "csr-api:build"
+        "buildTarget": "csr-api:build",
+        "port": 4001
       },
       "configurations": {
         "development": {

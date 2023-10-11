@@ -6,8 +6,10 @@
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noImplicitReturns": false,
+    "noImplicitAny" : false,
+    "noFallthroughCasesInSwitch": true,
+    "strictPropertyInitialization": false
   },
   "files": [],
   "include": [],

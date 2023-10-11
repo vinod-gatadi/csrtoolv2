@@ -16,6 +16,13 @@ nx g @nx/express:app csr-api --directory=apps/csr-api
 3. To start the app
 nx serve csr-client or npx nx serve csr-client
 
+4. Add express app to our workspace
+npm i --save-dev @nx/express
+nx g @nx/express:app csr-api --directory=apps/csr-api
+
+5. To start express app
+nx serve csr-api or or npx nx serve csr-api
+
 # Csrtoolv2
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>

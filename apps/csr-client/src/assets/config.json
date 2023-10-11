@@ -1,0 +1,4 @@
+{
+    "environment": "dev",
+    "discoveryUrl": "http://localhost:13000/discovery"
+}

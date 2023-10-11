@@ -2,7 +2,7 @@
   "name": "csr-client",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "csrtoolv2",
+  "prefix": "app",
   "sourceRoot": "apps/csr-client/src",
   "tags": [],
   "targets": {
@@ -16,10 +16,30 @@
         "polyfills": ["zone.js"],
         "tsConfig": "apps/csr-client/tsconfig.app.json",
         "assets": [
-          "apps/csr-client/src/favicon.ico",
-          "apps/csr-client/src/assets"
+            "apps/csr-client/src/favicon.ico",
+            "apps/csr-client/src/assets",
+            {
+                "glob": "*",
+                "input": "node_modules/font-awesome/fonts",
+                "output": "assets/fonts/"
+            },
+            {
+                "input": "node_modules/@snapfish/tools-core-client/assets/css/",
+                "glob": "*",
+                "output": "assets/themes"
+            },
+            {
+                "input": "node_modules/@snapfish/tools-core-client/assets/fonts/",
+                "glob": "*",
+                "output": "assets/fonts"
+            },
+            {
+                "input": "node_modules/@snapfish/tools-core-client/assets/logos/",
+                "glob": "*",
+                "output": "assets/logos"
+            }
         ],
-        "styles": ["apps/csr-client/src/styles.scss"],
+        "styles": ["node_modules/font-awesome/css/font-awesome.css", "apps/csr-client/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -51,6 +71,9 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "port": 4000
+      },
       "configurations": {
         "production": {
           "browserTarget": "csr-client:build:production"
